@@ -43,20 +43,12 @@ public class PostController {
         return modelAndView;
 
     }
-
-
-//    @GetMapping("/create")
-//    public ModelAndView showCreateForm(){
-//        ModelAndView modelAndView =new ModelAndView("/post/create");
-//        modelAndView.addObject("post",postService.findAll());
-//        return modelAndView;
-//
-//    }
-//    @PostMapping("/create")
-//    public ModelAndView save(Post post){
-//        postService.save(post);
-//        ModelAndView modelAndView =new ModelAndView("redirect:posts");
-//        return modelAndView;
+    @GetMapping("/delete/{id}")
+    public ModelAndView showDeleteForm(@PathVariable Long id) {
+        postService.remove(id);
+        ModelAndView modelAndView = new ModelAndView("redirect:/posts");
+        return modelAndView;
+    }
 
 
 

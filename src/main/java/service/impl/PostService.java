@@ -10,6 +10,7 @@ import java.util.Optional;
 public class PostService implements IPostService {
     @Autowired
     PostRepository postRepository;
+
     @Override
     public Iterable findAll() {
         return postRepository.findAll();
@@ -27,7 +28,7 @@ public class PostService implements IPostService {
 
     @Override
     public void remove(long id) {
-
+        postRepository.deleteById(id);
     }
 
     @Override

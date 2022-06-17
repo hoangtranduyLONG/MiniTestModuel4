@@ -20,6 +20,8 @@
     <span th:text="${po.likes}"></span>
 
     <a th:href="@{/posts/edit/__${po.id}__}">Sửa</a>
+    <a th:href="@{/posts/delete/__${po.id}__}">Xóa</a>
+
 </div>
 </body>
 </html>
