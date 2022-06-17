@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    <!--    pro la key giao tiep -->
+    <input type="hidden" th:value="${po.id}">
+    <input type="text" name="content" th:value="${po.content}">
+    <input type="text" name="createAt" th:value="${po.createAt}">
+    <input type="text" name="likes" th:value="${po.likes}">
+    <input type="text" name="titles" th:value="${po.title}">
+    <button>Lưu</button>
+</form>
+
+</body>
+</html>
