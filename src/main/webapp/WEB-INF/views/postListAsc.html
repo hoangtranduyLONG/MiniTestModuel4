@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Post List Asc</title>
+</head>
+<body>
+<p>
+    <a href="/posts">Post list</a>
+</p>
+<h1>Post</h1>
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Likes</th>
+        <th>Create At</th>
+        <th>Edit</th>
+    </tr>
+    <th:block th:each="post : ${posts}">
+        <tr>
+            <td th:text="${post.title}"></td>
+            <td th:text="${post.content}"></td>
+            <td th:text="${post.likes}"></td>
+            <td th:text="${post.createAt}"></td>
+            <td><a th:href="@{/edit-post/__${post.id}__ }">Edit</a></td>
+
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

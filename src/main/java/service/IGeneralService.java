@@ -1,14 +1,17 @@
 package service;
 
+import model.Post;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import java.util.Optional;
 
-public interface IGeneralService <T>{
-    Iterable<T> findAll();
+public interface IGeneralService<T> {
+    Page<T> findAll(Pageable pageable);
 
-    Optional<T> findById(long id);
+    Optional<T> findById(Long id);
 
     void save(T t);
 
-    void remove(long id);
-
+    void remove(Long id);
 }
